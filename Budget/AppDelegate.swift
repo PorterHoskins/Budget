@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableViewCell.appearance().tintColor = Common.greenColor
         UITabBar.appearance().selectedImageTintColor = Common.greenColor
         
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName :  UIColor.whiteColor()];
+        
         //TESTING
         Common.accountController.accounts[AccountType.Checking] = [Account(name: "Cash", withInitialBalance: 0.0, withType: AccountType.Checking)]
         

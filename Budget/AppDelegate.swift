@@ -13,9 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
 
-
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        // Override point for customization after application launch.
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = Common.greenColor
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UISegmentedControl.appearance().tintColor = Common.greenColor
+        UITableViewCell.appearance().tintColor = Common.greenColor
+        UITabBar.appearance().selectedImageTintColor = Common.greenColor
+        
+        //TESTING
+        Common.accountController.accounts[AccountType.Checking] = [Account(name: "Cash", withInitialBalance: 0.0, withType: AccountType.Checking)]
+        
+        Common.categoryController
+        
         return true
     }
 

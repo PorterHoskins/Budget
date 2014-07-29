@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		04624310197C5B8A00067610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462430F197C5B8A00067610 /* AppDelegate.swift */; };
-		04624312197C5B8A00067610 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624311197C5B8A00067610 /* FirstViewController.swift */; };
-		04624314197C5B8A00067610 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624313197C5B8A00067610 /* SecondViewController.swift */; };
 		04624317197C5B8A00067610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04624315197C5B8A00067610 /* Main.storyboard */; };
 		04624319197C5B8A00067610 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04624318197C5B8A00067610 /* Images.xcassets */; };
 		04624325197C5B8A00067610 /* BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624324197C5B8A00067610 /* BudgetTests.swift */; };
+		0462432F197C5E5100067610 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462432E197C5E5100067610 /* Account.swift */; };
+		04624331197C5E9400067610 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624330197C5E9400067610 /* Transaction.swift */; };
+		04624336197C61DC00067610 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624335197C61DC00067610 /* AccountController.swift */; };
+		04624338197C668500067610 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624337197C668500067610 /* AccountsTableViewController.swift */; };
+		0462433A197C7B6200067610 /* NewAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624339197C7B6200067610 /* NewAccountTableViewController.swift */; };
+		0462433C197C89E500067610 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462433B197C89E500067610 /* Common.swift */; };
+		0462433E197C8E5E00067610 /* UIColor+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462433D197C8E5E00067610 /* UIColor+Options.swift */; };
+		0484DC35197F4FE800DD4C78 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484DC34197F4FE800DD4C78 /* CategoryController.swift */; };
+		048591D4197E07C500D1C345 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048591D3197E07C500D1C345 /* TransactionsTableViewController.swift */; };
+		048591D6197EE83A00D1C345 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048591D5197EE83A00D1C345 /* Category.swift */; };
+		048E25E0197CC85200C99F41 /* NewTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E25DF197CC85200C99F41 /* NewTransactionTableViewController.swift */; };
+		048E25E2197CCB4A00C99F41 /* AccountSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E25E1197CCB4A00C99F41 /* AccountSelectionTableViewController.swift */; };
+		04DD1D3D197F607D00AF0A2F /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DD1D3C197F607D00AF0A2F /* Categories.plist */; };
+		04DD1D3F197F6C1100AF0A2F /* CategorySelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD1D3E197F6C1100AF0A2F /* CategorySelectionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +41,25 @@
 		0462430A197C5B8A00067610 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0462430E197C5B8A00067610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0462430F197C5B8A00067610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04624311197C5B8A00067610 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		04624313197C5B8A00067610 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		04624316197C5B8A00067610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04624318197C5B8A00067610 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0462431E197C5B8A00067610 /* BudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04624323197C5B8A00067610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04624324197C5B8A00067610 /* BudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTests.swift; sourceTree = "<group>"; };
+		0462432E197C5E5100067610 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		04624330197C5E9400067610 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		04624335197C61DC00067610 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		04624337197C668500067610 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
+		04624339197C7B6200067610 /* NewAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountTableViewController.swift; sourceTree = "<group>"; };
+		0462433B197C89E500067610 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		0462433D197C8E5E00067610 /* UIColor+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Options.swift"; sourceTree = "<group>"; };
+		0484DC34197F4FE800DD4C78 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		048591D3197E07C500D1C345 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
+		048591D5197EE83A00D1C345 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		048E25DF197CC85200C99F41 /* NewTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionTableViewController.swift; sourceTree = "<group>"; };
+		048E25E1197CCB4A00C99F41 /* AccountSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSelectionTableViewController.swift; sourceTree = "<group>"; };
+		04DD1D3C197F607D00AF0A2F /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
+		04DD1D3E197F6C1100AF0A2F /* CategorySelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +101,18 @@
 		0462430C197C5B8A00067610 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				048E25E1197CCB4A00C99F41 /* AccountSelectionTableViewController.swift */,
+				04624337197C668500067610 /* AccountsTableViewController.swift */,
 				0462430F197C5B8A00067610 /* AppDelegate.swift */,
-				04624311197C5B8A00067610 /* FirstViewController.swift */,
-				04624313197C5B8A00067610 /* SecondViewController.swift */,
-				04624315197C5B8A00067610 /* Main.storyboard */,
+				04DD1D3E197F6C1100AF0A2F /* CategorySelectionTableViewController.swift */,
+				0462433B197C89E500067610 /* Common.swift */,
+				04624339197C7B6200067610 /* NewAccountTableViewController.swift */,
+				048E25DF197CC85200C99F41 /* NewTransactionTableViewController.swift */,
+				048591D3197E07C500D1C345 /* TransactionsTableViewController.swift */,
+				0462433D197C8E5E00067610 /* UIColor+Options.swift */,
 				04624318197C5B8A00067610 /* Images.xcassets */,
+				04624315197C5B8A00067610 /* Main.storyboard */,
+				04624332197C5EAD00067610 /* Models */,
 				0462430D197C5B8A00067610 /* Supporting Files */,
 			);
 			path = Budget;
@@ -91,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0462430E197C5B8A00067610 /* Info.plist */,
+				04DD1D3C197F607D00AF0A2F /* Categories.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,6 +142,18 @@
 				04624323197C5B8A00067610 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04624332197C5EAD00067610 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04624335197C61DC00067610 /* AccountController.swift */,
+				0484DC34197F4FE800DD4C78 /* CategoryController.swift */,
+				0462432E197C5E5100067610 /* Account.swift */,
+				04624330197C5E9400067610 /* Transaction.swift */,
+				048591D5197EE83A00D1C345 /* Category.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04624317197C5B8A00067610 /* Main.storyboard in Resources */,
+				04DD1D3D197F607D00AF0A2F /* Categories.plist in Resources */,
 				04624319197C5B8A00067610 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,9 +256,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04624314197C5B8A00067610 /* SecondViewController.swift in Sources */,
+				04624336197C61DC00067610 /* AccountController.swift in Sources */,
+				0484DC35197F4FE800DD4C78 /* CategoryController.swift in Sources */,
+				048E25E0197CC85200C99F41 /* NewTransactionTableViewController.swift in Sources */,
 				04624310197C5B8A00067610 /* AppDelegate.swift in Sources */,
-				04624312197C5B8A00067610 /* FirstViewController.swift in Sources */,
+				0462433A197C7B6200067610 /* NewAccountTableViewController.swift in Sources */,
+				04624338197C668500067610 /* AccountsTableViewController.swift in Sources */,
+				0462433E197C8E5E00067610 /* UIColor+Options.swift in Sources */,
+				048591D4197E07C500D1C345 /* TransactionsTableViewController.swift in Sources */,
+				048E25E2197CCB4A00C99F41 /* AccountSelectionTableViewController.swift in Sources */,
+				0462432F197C5E5100067610 /* Account.swift in Sources */,
+				04624331197C5E9400067610 /* Transaction.swift in Sources */,
+				0462433C197C89E500067610 /* Common.swift in Sources */,
+				048591D6197EE83A00D1C345 /* Category.swift in Sources */,
+				04DD1D3F197F6C1100AF0A2F /* CategorySelectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +455,7 @@
 				0462432A197C5B8A00067610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0462432B197C5B8A00067610 /* Build configuration list for PBXNativeTarget "BudgetTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +464,7 @@
 				0462432D197C5B8A00067610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

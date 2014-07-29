@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Auto &amp; Transport</string>
+		<key>categories</key>
+		<array>
+			<string>Auto Insurance</string>
+			<string>Auto Payment</string>
+			<string>Gas &amp; Fuel</string>
+			<string>Parking</string>
+			<string>Public Transportation</string>
+			<string>Service &amp; Parts</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bills &amp; Utilities</string>
+		<key>categories</key>
+		<array>
+			<string>Home Phone</string>
+			<string>Internet</string>
+			<string>Mobile Phone</string>
+			<string>Television</string>
+			<string>Utilities</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Business Services</string>
+		<key>categories</key>
+		<array>
+			<string>Advertising</string>
+			<string>Legal</string>
+			<string>Office Supplies</string>
+			<string>Printing</string>
+			<string>Shipping</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Education</string>
+		<key>categories</key>
+		<array>
+			<string>Books &amp; Supplies</string>
+			<string>School Fees</string>
+			<string>Student Loan</string>
+			<string>Tuition</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Entertainment</string>
+		<key>categories</key>
+		<array>
+			<string>Amusement</string>
+			<string>Arts</string>
+			<string>Movies &amp; DVDs</string>
+			<string>Music</string>
+			<string>Newspapers &amp; Magazines</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Fees &amp; Charges</string>
+		<key>categories</key>
+		<array>
+			<string>ATM Fee</string>
+			<string>Bank Fee</string>
+			<string>Finance Charge</string>
+			<string>Late Fee</string>
+			<string>Service Fee</string>
+			<string>Trade Commissions</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Financial</string>
+		<key>categories</key>
+		<array>
+			<string>Financial Advisor</string>
+			<string>Identity Protection</string>
+			<string>Life Insurance</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Food &amp; Dining</string>
+		<key>categories</key>
+		<array>
+			<string>Alcohol &amp; Bars</string>
+			<string>Coffee Shops</string>
+			<string>Fast Food</string>
+			<string>Groceries</string>
+			<string>Restaurants</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Gifts &amp; Donations</string>
+		<key>categories</key>
+		<array>
+			<string>Charity</string>
+			<string>Christmas</string>
+			<string>Gift</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Health &amp; Fitness</string>
+		<key>categories</key>
+		<array>
+			<string>Dentist</string>
+			<string>Doctor</string>
+			<string>Eyecare</string>
+			<string>Gym</string>
+			<string>Health Insurance</string>
+			<string>Pharmacy</string>
+			<string>Sports</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Home</string>
+		<key>categories</key>
+		<array>
+			<string>Furnishings</string>
+			<string>Home Improvement</string>
+			<string>Home Insurance</string>
+			<string>Home Services</string>
+			<string>Home Supplies</string>
+			<string>Lawn &amp; Garden</string>
+			<string>Mortgage &amp; Rent</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Income</string>
+		<key>categories</key>
+		<array>
+			<string>Bonus</string>
+			<string>Interest Income</string>
+			<string>Paycheck</string>
+			<string>Reimbursement</string>
+			<string>Rental Income</string>
+			<string>Returned Purchase</string>
+			<string>Savings</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kids</string>
+		<key>categories</key>
+		<array>
+			<string>Allowance</string>
+			<string>Baby Supplies</string>
+			<string>Babysitter &amp; Daycare</string>
+			<string>Child Support</string>
+			<string>Kids Activities</string>
+			<string>Toys</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Misc Expenses</string>
+		<key>categories</key>
+		<array>
+			<string>Spending</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Personal Care</string>
+		<key>categories</key>
+		<array>
+			<string>Hair</string>
+			<string>Laundry</string>
+			<string>Personal Supplies</string>
+			<string>Spa &amp; Massage</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pets</string>
+		<key>categories</key>
+		<array>
+			<string>Pet Food &amp; Supplies</string>
+			<string>Pet Grooming</string>
+			<string>Veterinary</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Shopping</string>
+		<key>categories</key>
+		<array>
+			<string>Books</string>
+			<string>Clothing</string>
+			<string>Electronics &amp; Software</string>
+			<string>Hobbies</string>
+			<string>Sporting Goods</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Taxes</string>
+		<key>categories</key>
+		<array>
+			<string>Federal Tax</string>
+			<string>Local Tax</string>
+			<string>Property Tax</string>
+			<string>Sales Tax</string>
+			<string>State Tax</string>
+			<string>Tax Preparation Fees</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Transfer</string>
+		<key>categories</key>
+		<array>
+			<string>Credit Card Payment</string>
+			<string>Transfer for Cash Spending</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Travel</string>
+		<key>categories</key>
+		<array>
+			<string>Air Travel</string>
+			<string>Hotel</string>
+			<string>Rental Car &amp; Taxi</string>
+			<string>Vacation</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Uncategorized</string>
+		<key>categories</key>
+		<array>
+			<string>Uncategorized</string>
+			<string>Cash &amp; ATM</string>
+			<string>Check</string>
+		</array>
+	</dict>
+</array>
+</plist>

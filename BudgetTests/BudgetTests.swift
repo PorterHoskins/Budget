@@ -3,7 +3,7 @@
 //  BudgetTests
 //
 //  Created by Porter Hoskins on 7/20/14.
-//  Copyright (c) 2014 Lampo. All rights reserved.
+//  Copyright (c) 2014 PorterHoskins. All rights reserved.
 //
 
 import UIKit

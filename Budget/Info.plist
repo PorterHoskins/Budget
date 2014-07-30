@@ -28,16 +28,14 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
 		<dict>
 			<key>Style</key>
-			<string>LightContent</string>
+			<string>UIBarStyleDefault</string>
 			<key>Translucent</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>

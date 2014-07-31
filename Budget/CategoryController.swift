@@ -20,10 +20,20 @@ class CategoryController {
         
         for section in plist {
             if let sectionName = CategorySection.fromRaw(section.objectForKey("name") as String!) {
+                categories.append(Category(section: sectionName))
+                
                 for category in section.objectForKey("categories") as NSArray {
                     categories.append(Category(section: sectionName, withName: category as String))
                 }
             }
         }
+    }
+    
+    func defaultUncategorizedCategory() -> Category {
+        return self.categories.filter({c in return c.section == CategorySection.Uncategorized })[0]
+    }
+    
+    func defaultInitialBalanceCategory() -> Category {
+        return self.categories.filter({c in return c.section == CategorySection.Transfer })[0]
     }
 }

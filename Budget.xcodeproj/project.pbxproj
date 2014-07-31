@@ -23,6 +23,7 @@
 		048591D6197EE83A00D1C345 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048591D5197EE83A00D1C345 /* Category.swift */; };
 		048E25E0197CC85200C99F41 /* NewTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E25DF197CC85200C99F41 /* NewTransactionTableViewController.swift */; };
 		048E25E2197CCB4A00C99F41 /* AccountSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E25E1197CCB4A00C99F41 /* AccountSelectionTableViewController.swift */; };
+		04BD179D1989FB53003164FF /* Utilties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD179C1989FB53003164FF /* Utilties.swift */; };
 		04DD1D3D197F607D00AF0A2F /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DD1D3C197F607D00AF0A2F /* Categories.plist */; };
 		04DD1D3F197F6C1100AF0A2F /* CategorySelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD1D3E197F6C1100AF0A2F /* CategorySelectionTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		048591D5197EE83A00D1C345 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		048E25DF197CC85200C99F41 /* NewTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionTableViewController.swift; sourceTree = "<group>"; };
 		048E25E1197CCB4A00C99F41 /* AccountSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSelectionTableViewController.swift; sourceTree = "<group>"; };
+		04BD179C1989FB53003164FF /* Utilties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilties.swift; sourceTree = "<group>"; };
 		04DD1D3C197F607D00AF0A2F /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		04DD1D3E197F6C1100AF0A2F /* CategorySelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				04624315197C5B8A00067610 /* Main.storyboard */,
 				04624332197C5EAD00067610 /* Models */,
 				0462430D197C5B8A00067610 /* Supporting Files */,
+				04BD179C1989FB53003164FF /* Utilties.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				0462432F197C5E5100067610 /* Account.swift in Sources */,
 				04624331197C5E9400067610 /* Transaction.swift in Sources */,
 				0462433C197C89E500067610 /* Common.swift in Sources */,
+				04BD179D1989FB53003164FF /* Utilties.swift in Sources */,
 				048591D6197EE83A00D1C345 /* Category.swift in Sources */,
 				04DD1D3F197F6C1100AF0A2F /* CategorySelectionTableViewController.swift in Sources */,
 			);

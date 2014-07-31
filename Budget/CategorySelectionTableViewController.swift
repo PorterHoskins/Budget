@@ -43,10 +43,6 @@ class CategorySelectionTableViewController: UITableViewController {
         
         return categories.count
     }
-    
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        return CategorySection.allValues[section].toRaw()
-    }
 
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("category", forIndexPath: indexPath) as UITableViewCell
@@ -55,7 +51,13 @@ class CategorySelectionTableViewController: UITableViewController {
         let categories = Common.categoryController.categories.filter { c in return c.section == CategorySection.allValues[indexPath.section] }
         
         let category = categories[indexPath.row]
-        cell.textLabel.text = category.name
+        if indexPath.row == 0 {
+            cell.textLabel.text = category.name
+            cell.textLabel.textColor = UIColor.darkTextColor()
+        } else {
+            cell.textLabel.text = " - \(category.name)"
+            cell.textLabel.textColor = UIColor.darkGrayColor()
+        }
         
         if let selectedCategory = self.selectedCategory {
             if category == selectedCategory {

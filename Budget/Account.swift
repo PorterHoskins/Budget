@@ -15,10 +15,14 @@ class Account: Equatable {
     private var _transactions = [Transaction]()
     var transactions: [Transaction] {
     get {
-        return _transactions.sorted{ t1, t2 in return t1.date.compare(t2.date) == NSComparisonResult.OrderedDescending }
+        //TODO: Needs to cache sorted list instead of sorting it each time
+        return _transactions.sorted({ t1, t2 in return t1.date.compare(t2.date) == NSComparisonResult.OrderedDescending }).sorted({ t1, t2 in return t1.name.compare(t2.name) == NSComparisonResult.OrderedAscending})
     }
     set {
         _transactions = newValue
+        
+        //TODO: Invalidate Sorted Cache
+        //TODO: Invalidate Date Cache
     }
     }
     
@@ -42,7 +46,17 @@ class Account: Equatable {
         self.name = name
         self.type = type
         
-        _transactions.append(Transaction(amount: initialBalance, withName: "Initial Balance", withType: TransactionType.InitialBalance))
+        let initalBalanceCategory = Common.categoryController.defaultInitialBalanceCategory()
+        _transactions.append(Transaction(amount: initialBalance, withName: "Initial Balance", withType: TransactionType.InitialBalance, withCategory:initalBalanceCategory))
+    }
+    
+    func listOfDatesForTransactions() -> [NSDate] {
+        var dates = Set<NSDate>()
+        for transaction in _transactions {
+            dates.insert(transaction.date)
+        }
+        
+        return dates.items
     }
 }
 

@@ -221,6 +221,7 @@
 		<string>Transfer</string>
 		<key>categories</key>
 		<array>
+			<string>Initial Balance</string>
 			<string>Credit Card Payment</string>
 			<string>Transfer for Cash Spending</string>
 		</array>
@@ -241,7 +242,6 @@
 		<string>Uncategorized</string>
 		<key>categories</key>
 		<array>
-			<string>Uncategorized</string>
 			<string>Cash &amp; ATM</string>
 			<string>Check</string>
 		</array>

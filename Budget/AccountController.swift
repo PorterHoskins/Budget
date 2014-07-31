@@ -13,9 +13,7 @@ class AccountController {
     let accountTypes = [AccountType.Checking, AccountType.Savings, AccountType.Retirement, AccountType.Investment, AccountType.CreditCard, AccountType.Loan]
     var accounts = [AccountType:[Account]]()
     
-    init () {
-        
-    }
+    init () {}
     
     //MARK: Transactions
     
@@ -34,7 +32,10 @@ class AccountController {
             }
         }
         
+        //Sort by date and name
         transactions.sort { transaction1, transaction2 in return transaction1.date.compare(transaction2.date) == NSComparisonResult.OrderedDescending }
+        transactions.sort { t1, t2 in return t1.name.compare(t2.name) == NSComparisonResult.OrderedAscending}
+        
         transactionCache = transactions
         
         return transactions
@@ -50,6 +51,24 @@ class AccountController {
         account.transactions.append(transaction)
         
         NSNotificationCenter.defaultCenter().postNotificationName(Common.NewTransactionNotification, object: transaction)
+    }
+    
+    private var dateCache: [NSDate]?
+    func allTransactionDates() -> [NSDate] {
+        if let dateCache = dateCache {
+            return dateCache
+        }
+        
+        var dates = Set<NSDate>()
+        for (type, accounts) in self.accounts {
+            for account in accounts {
+                dates.insert(account.listOfDatesForTransactions())
+            }
+        }
+        
+        dateCache = dates.items
+        
+        return dateCache!
     }
     
     //MARK: Accounts

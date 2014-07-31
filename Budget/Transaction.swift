@@ -13,12 +13,21 @@ class Transaction {
     var name: String
     var type: TransactionType
     var date: NSDate
+    var category: Category
     
     init (amount: Double, withName name: String, withType type: TransactionType) {
         self.amount = amount
         self.name = name
         self.type = type
         self.date = NSDate()
+        
+        self.category = Common.categoryController.defaultUncategorizedCategory()
+    }
+    
+    convenience init (amount: Double, withName name: String, withType type: TransactionType, withCategory category: Category) {
+        self.init(amount: amount, withName: name, withType: type)
+        
+        self.category = category
     }
 }
 

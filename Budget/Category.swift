@@ -10,10 +10,27 @@ import UIKit
 
 class Category: Equatable {
     var section: CategorySection
-    var name: String
+    private var _name: String?
+    var name: String {
+        get {
+            if let name = _name {
+                return name
+            } else {
+                return section.toRaw()
+            }
+        }
+        set {
+            _name = newValue
+        }
+    }
     
-    init (section: CategorySection, withName name: String) {
+    init (section: CategorySection) {
         self.section = section
+    }
+    
+    convenience init (section: CategorySection, withName name: String) {
+        self.init(section: section)
+        
         self.name = name
     }
 }

@@ -10,9 +10,16 @@ import UIKit
 
 class TransactionsTableViewController: UITableViewController {
     var account: Account?
+    let dateFormatter = NSDateFormatter()
+    let numberFormatter = NSNumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,9 +62,11 @@ class TransactionsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
         if section == 0 {
             return nil
+        } else if let account = account {
+            return dateFormatter.stringFromDate(account.listOfDatesForTransactions()[section - 1])
+        } else {
+            return dateFormatter.stringFromDate(Common.accountController.allTransactionDates()[0])
         }
-        
-        return "Transactions"
     }
     
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
@@ -75,9 +84,6 @@ class TransactionsTableViewController: UITableViewController {
             accountType = AccountType.Checking //Do this for a positive account balance type
         }
         
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("total", forIndexPath: indexPath) as UITableViewCell
             let amountLabel = cell.viewWithTag(3) as UILabel
@@ -91,22 +97,21 @@ class TransactionsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("transaction", forIndexPath: indexPath) as UITableViewCell
         let nameLabel = cell.viewWithTag(1) as UILabel
-        let dateLabel = cell.viewWithTag(2) as UILabel
+        let typeLabel = cell.viewWithTag(2) as UILabel
         let amountLabel = cell.viewWithTag(3) as UILabel
         
         
         var transaction: Transaction?
+        var transactionIndex = (indexPath.section - 1) * indexPath.row
         if let account = account {
-            transaction = account.transactions[indexPath.row]
+            transaction = account.transactions[transactionIndex]
         } else {
-            transaction = Common.accountController.allTransactions()[indexPath.row]
+            transaction = Common.accountController.allTransactions()[transactionIndex]
         }
 
         nameLabel.text = transaction!.name
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        dateLabel.text = dateFormatter.stringFromDate(transaction!.date)
+        typeLabel.text = transaction!.category.name
         
         amountLabel.text = numberFormatter.stringFromNumber(transaction!.amount)
         amountLabel.textColor = UIColor.color(transaction!.amount, forTransactionType: transaction!.type)
@@ -114,7 +119,6 @@ class TransactionsTableViewController: UITableViewController {
         return cell
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {

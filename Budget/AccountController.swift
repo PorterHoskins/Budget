@@ -48,27 +48,9 @@ class AccountController {
     func add(transaction: Transaction, toAccount account: Account) {
         invalidateTransactionCache()
         
-        account.transactions.append(transaction)
+        account.add(transaction)
         
         NSNotificationCenter.defaultCenter().postNotificationName(Common.NewTransactionNotification, object: transaction)
-    }
-    
-    private var dateCache: [NSDate]?
-    func allTransactionDates() -> [NSDate] {
-        if let dateCache = dateCache {
-            return dateCache
-        }
-        
-        var dates = Set<NSDate>()
-        for (type, accounts) in self.accounts {
-            for account in accounts {
-                dates.insert(account.listOfDatesForTransactions())
-            }
-        }
-        
-        dateCache = dates.items
-        
-        return dateCache!
     }
     
     //MARK: Accounts

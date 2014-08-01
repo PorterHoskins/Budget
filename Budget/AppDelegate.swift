@@ -26,7 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName :  UIColor.whiteColor()];
         
         //TESTING
-        Common.accountController.accounts[AccountType.Checking] = [Account(name: "Cash", withInitialBalance: 0.0, withType: AccountType.Checking)]
+        let account = Account(name: "Cash", withInitialBalance: 0.0, withType: AccountType.Checking)
+        let transaction = Transaction(amount: 200, withName: "Test 1", withType: TransactionType.Expense)
+        transaction.date = NSDate(year: 2014, month: 05, day: 11)
+        
+        let transaction2 = Transaction(amount: 300, withName: "Test 2", withType: TransactionType.Expense)
+        transaction2.date = NSDate(year: 2014, month: 05, day: 12)
+        
+        account.add(transaction)
+        account.add(transaction2)
+        
+        Common.accountController.accounts[AccountType.Checking] = [account]
         
         Common.categoryController
         

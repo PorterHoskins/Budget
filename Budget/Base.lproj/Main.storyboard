@@ -617,7 +617,7 @@
                                             <rect key="frame" x="411" y="0.0" width="169" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="169" id="N42-L8-2dp"/>
-                                                <constraint firstAttribute="height" constant="55" id="rcx-Op-fbd"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="rcx-Op-fbd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -627,7 +627,7 @@
                                             <rect key="frame" x="20" y="0.0" width="224" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="224" id="HUF-Es-Kyk"/>
-                                                <constraint firstAttribute="height" constant="55" id="IIG-47-ntt"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="IIG-47-ntt"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -635,9 +635,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="dKJ-Eg-r5v" secondAttribute="bottom" constant="-1" id="QXw-OS-8KE"/>
                                         <constraint firstAttribute="centerY" secondItem="snP-5G-Xkc" secondAttribute="centerY" id="RSh-Xp-X9M"/>
-                                        <constraint firstAttribute="centerY" secondItem="dKJ-Eg-r5v" secondAttribute="centerY" id="TwH-kY-VCe"/>
                                         <constraint firstItem="dKJ-Eg-r5v" firstAttribute="leading" secondItem="IpN-No-Jcx" secondAttribute="leading" constant="20" id="ZaD-aQ-tgT"/>
+                                        <constraint firstItem="dKJ-Eg-r5v" firstAttribute="top" secondItem="IpN-No-Jcx" secondAttribute="top" id="fRx-9B-cdE"/>
                                         <constraint firstAttribute="trailing" secondItem="snP-5G-Xkc" secondAttribute="trailing" constant="20" id="u4u-Dr-k1e"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -649,24 +650,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffe Macs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXe-hn-VFF">
-                                            <rect key="frame" x="20" y="13" width="244" height="21"/>
+                                            <rect key="frame" x="20" y="10" width="244" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="244" id="LKh-Y3-tLX"/>
+                                                <constraint firstAttribute="width" constant="244" id="bH4-Kw-En7"/>
+                                                <constraint firstAttribute="height" constant="16" id="jSs-yn-AAA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resturants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsg-uz-KS8">
-                                            <rect key="frame" x="20" y="30" width="244" height="20"/>
+                                            <rect key="frame" x="20" y="26" width="244" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="hip-Dk-mdn"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ap-QC-Glc">
-                                            <rect key="frame" x="385" y="1" width="195" height="55"/>
+                                            <rect key="frame" x="385" y="0.0" width="195" height="54"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="195" id="R3u-Zk-GIV"/>
+                                                <constraint firstAttribute="width" constant="195" id="VQv-kY-F24"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -674,15 +679,15 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="leading" secondItem="sE5-tD-eAh" secondAttribute="leading" constant="20" symbolic="YES" id="2Oy-ht-uq3"/>
-                                        <constraint firstAttribute="bottom" secondItem="5ap-QC-Glc" secondAttribute="bottom" constant="-2" id="EK0-Tu-WMD"/>
-                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="top" secondItem="sE5-tD-eAh" secondAttribute="top" constant="13" id="JYZ-Vc-pWA"/>
-                                        <constraint firstItem="5ap-QC-Glc" firstAttribute="top" secondItem="sE5-tD-eAh" secondAttribute="top" constant="1" id="YHd-RT-BU6"/>
-                                        <constraint firstAttribute="bottom" secondItem="Dsg-uz-KS8" secondAttribute="bottom" constant="4" id="aXL-MX-6bZ"/>
-                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="trailing" secondItem="Dsg-uz-KS8" secondAttribute="trailing" id="jtM-pf-AXH"/>
-                                        <constraint firstItem="Dsg-uz-KS8" firstAttribute="top" secondItem="sE5-tD-eAh" secondAttribute="top" constant="30" id="kdl-kt-kIi"/>
-                                        <constraint firstAttribute="trailing" secondItem="5ap-QC-Glc" secondAttribute="trailing" constant="20" symbolic="YES" id="tYP-yw-Wt0"/>
-                                        <constraint firstItem="Dsg-uz-KS8" firstAttribute="leading" secondItem="qXe-hn-VFF" secondAttribute="leading" id="ufa-uz-xnO"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dsg-uz-KS8" secondAttribute="bottom" constant="8" id="2HN-wl-7ir"/>
+                                        <constraint firstAttribute="bottom" secondItem="5ap-QC-Glc" secondAttribute="bottom" id="2V0-Mw-hVL"/>
+                                        <constraint firstItem="Dsg-uz-KS8" firstAttribute="top" secondItem="qXe-hn-VFF" secondAttribute="bottom" id="9qy-Fc-HQX"/>
+                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="trailing" secondItem="Dsg-uz-KS8" secondAttribute="trailing" id="Ib6-fG-uGR"/>
+                                        <constraint firstItem="5ap-QC-Glc" firstAttribute="top" secondItem="sE5-tD-eAh" secondAttribute="top" id="KK0-Ns-ZqV"/>
+                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="top" secondItem="sE5-tD-eAh" secondAttribute="top" constant="10" id="QX3-Hj-hcr"/>
+                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="leading" secondItem="sE5-tD-eAh" secondAttribute="leading" constant="20" symbolic="YES" id="eA7-Hg-Q0c"/>
+                                        <constraint firstAttribute="trailing" secondItem="5ap-QC-Glc" secondAttribute="trailing" constant="20" symbolic="YES" id="uh8-Sy-ctU"/>
+                                        <constraint firstItem="qXe-hn-VFF" firstAttribute="leading" secondItem="Dsg-uz-KS8" secondAttribute="leading" id="uxK-e1-Xqt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>

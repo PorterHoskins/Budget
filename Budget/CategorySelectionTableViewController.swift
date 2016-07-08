@@ -29,13 +29,13 @@ class CategorySelectionTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: (UITableView!)) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return CategorySection.allValues.count
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: (UITableView!), numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         let categorySection = CategorySection.allValues[section]
@@ -44,7 +44,7 @@ class CategorySelectionTableViewController: UITableViewController {
         return categories.count
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("category", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
@@ -52,11 +52,11 @@ class CategorySelectionTableViewController: UITableViewController {
         
         let category = categories[indexPath.row]
         if indexPath.row == 0 {
-            cell.textLabel.text = category.name
-            cell.textLabel.textColor = UIColor.darkTextColor()
+            cell.textLabel!.text = category.name
+            cell.textLabel!.textColor = UIColor.darkTextColor()
         } else {
-            cell.textLabel.text = " - \(category.name)"
-            cell.textLabel.textColor = UIColor.darkGrayColor()
+            cell.textLabel!.text = " - \(category.name)"
+            cell.textLabel!.textColor = UIColor.darkGrayColor()
         }
         
         if let selectedCategory = self.selectedCategory {

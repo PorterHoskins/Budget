@@ -26,8 +26,8 @@ class AccountsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.navigationItem.leftBarButtonItem = addTransactionButton
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadAccountData", name: Common.NewAccountNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadAccountData", name: Common.NewTransactionNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AccountsTableViewController.reloadAccountData), name: Common.NewAccountNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AccountsTableViewController.reloadAccountData), name: Common.NewTransactionNotification, object: nil)
         
         self.editButtonItem().tintColor = UIColor.whiteColor()
         
@@ -50,13 +50,13 @@ class AccountsTableViewController: UITableViewController {
 
     // #pragma mark - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: (UITableView!)) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return accountSections.count + 1
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    override func tableView(tableView: (UITableView!), titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return nil
         }
@@ -64,7 +64,7 @@ class AccountsTableViewController: UITableViewController {
         return accountSections[section - 1]
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
@@ -73,10 +73,10 @@ class AccountsTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(indexPath.section == 0 ? "netWorth" : "account", forIndexPath: indexPath) as? UITableViewCell
-        let nameLabel = cell!.viewWithTag(1) as UILabel
-        let amountLabel = cell!.viewWithTag(3) as UILabel
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(indexPath.section == 0 ? "netWorth" : "account", forIndexPath: indexPath) as UITableViewCell
+        let nameLabel = cell.viewWithTag(1) as! UILabel
+        let amountLabel = cell.viewWithTag(3) as! UILabel
         
         // Configure the cell...
         let numberFormatter = NSNumberFormatter()
@@ -93,7 +93,7 @@ class AccountsTableViewController: UITableViewController {
             return cell
         }
         
-        let typeLabel = cell!.viewWithTag(2) as UILabel
+        let typeLabel = cell.viewWithTag(2) as! UILabel
         
         var accounts = accountsForSection(accountSections[indexPath.section - 1])
         let account = accounts[indexPath.row]
@@ -106,7 +106,7 @@ class AccountsTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func tableView(tableView: (UITableView!), canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == 0 {
             return false
         } else {
@@ -114,22 +114,22 @@ class AccountsTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        let amountView = tableView.cellForRowAtIndexPath(indexPath).viewWithTag(3)
+    override func tableView(tableView: (UITableView!), commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let amountView = tableView.cellForRowAtIndexPath(indexPath)!.viewWithTag(3)
         
         UIView.animateWithDuration(1, animations: {
-            amountView.frame = CGRectMake(amountView.frame.origin.x - 100, amountView.frame.origin.y, amountView.frame.size.width, amountView.frame.size.height)
+            amountView!.frame = CGRectMake(amountView!.frame.origin.x - 100, amountView!.frame.origin.y, amountView!.frame.size.width, amountView!.frame.size.height)
             
             }, completion: { success in
                 
             })
     }
     
-    override func tableView(tableView: UITableView!, didEndEditingRowAtIndexPath indexPath: NSIndexPath!) {
-        let amountView = tableView.cellForRowAtIndexPath(indexPath).viewWithTag(3)
+    override func tableView(tableView: UITableView, didEndEditingRowAtIndexPath indexPath: (NSIndexPath!)) {
+        let amountView = tableView.cellForRowAtIndexPath(indexPath)!.viewWithTag(3)
         
         UIView.animateWithDuration(1, animations: {
-            amountView.frame = CGRectMake(amountView.frame.origin.x + 100, amountView.frame.origin.y, amountView.frame.size.width, amountView.frame.size.height)
+            amountView!.frame = CGRectMake(amountView!.frame.origin.x + 100, amountView!.frame.origin.y, amountView!.frame.size.width, amountView!.frame.size.height)
             
             }, completion: { success in
                 
@@ -164,7 +164,7 @@ class AccountsTableViewController: UITableViewController {
                 accounts += loanAccounts
             }
         default:
-            println("No accounts were found")
+            print("No accounts were found")
         }
         
         return accounts
@@ -209,14 +209,14 @@ class AccountsTableViewController: UITableViewController {
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if let transactionsViewController = segue.destinationViewController as? TransactionsTableViewController {
-            let indexPath = self.tableView.indexPathForSelectedRow()
+            let indexPath = self.tableView.indexPathForSelectedRow
             
             var account: Account?
             
-            if indexPath.section != 0 {
-                account = accountsForSection(accountSections[indexPath.section - 1])[indexPath.row]
+            if indexPath!.section != 0 {
+                account = accountsForSection(accountSections[indexPath!.section - 1])[indexPath!.row]
             }
 
             transactionsViewController.account = account

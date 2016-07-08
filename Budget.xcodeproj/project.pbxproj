@@ -10,7 +10,6 @@
 		04624310197C5B8A00067610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462430F197C5B8A00067610 /* AppDelegate.swift */; };
 		04624317197C5B8A00067610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04624315197C5B8A00067610 /* Main.storyboard */; };
 		04624319197C5B8A00067610 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04624318197C5B8A00067610 /* Images.xcassets */; };
-		04624325197C5B8A00067610 /* BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624324197C5B8A00067610 /* BudgetTests.swift */; };
 		0462432F197C5E5100067610 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462432E197C5E5100067610 /* Account.swift */; };
 		04624331197C5E9400067610 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624330197C5E9400067610 /* Transaction.swift */; };
 		04624336197C61DC00067610 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04624335197C61DC00067610 /* AccountController.swift */; };
@@ -29,23 +28,12 @@
 		04FF0D5E198B32C80037ED01 /* TransactionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0D5D198B32C80037ED01 /* TransactionsDataSource.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0462431F197C5B8A00067610 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04624302197C5B8A00067610 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04624309197C5B8A00067610;
-			remoteInfo = Budget;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0462430A197C5B8A00067610 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0462430E197C5B8A00067610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0462430F197C5B8A00067610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04624316197C5B8A00067610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04624318197C5B8A00067610 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0462431E197C5B8A00067610 /* BudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04624323197C5B8A00067610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04624324197C5B8A00067610 /* BudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTests.swift; sourceTree = "<group>"; };
 		0462432E197C5E5100067610 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -74,13 +62,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0462431B197C5B8A00067610 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				0462430A197C5B8A00067610 /* Budget.app */,
-				0462431E197C5B8A00067610 /* BudgetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,39 +162,19 @@
 			productReference = 0462430A197C5B8A00067610 /* Budget.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0462431D197C5B8A00067610 /* BudgetTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0462432B197C5B8A00067610 /* Build configuration list for PBXNativeTarget "BudgetTests" */;
-			buildPhases = (
-				0462431A197C5B8A00067610 /* Sources */,
-				0462431B197C5B8A00067610 /* Frameworks */,
-				0462431C197C5B8A00067610 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04624320197C5B8A00067610 /* PBXTargetDependency */,
-			);
-			name = BudgetTests;
-			productName = BudgetTests;
-			productReference = 0462431E197C5B8A00067610 /* BudgetTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		04624302197C5B8A00067610 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = PorterHoskins;
 				TargetAttributes = {
 					04624309197C5B8A00067610 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					0462431D197C5B8A00067610 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 04624309197C5B8A00067610;
 					};
 				};
 			};
@@ -232,7 +192,6 @@
 			projectRoot = "";
 			targets = (
 				04624309197C5B8A00067610 /* Budget */,
-				0462431D197C5B8A00067610 /* BudgetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,13 +204,6 @@
 				04624317197C5B8A00067610 /* Main.storyboard in Resources */,
 				04DD1D3D197F607D00AF0A2F /* Categories.plist in Resources */,
 				04624319197C5B8A00067610 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0462431C197C5B8A00067610 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,23 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0462431A197C5B8A00067610 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04624325197C5B8A00067610 /* BudgetTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		04624320197C5B8A00067610 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04624309197C5B8A00067610 /* Budget */;
-			targetProxy = 0462431F197C5B8A00067610 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04624315197C5B8A00067610 /* Main.storyboard */ = {
@@ -331,6 +267,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -395,6 +332,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Budget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.porterhoskins.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -407,42 +345,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Budget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.porterhoskins.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0462432C197C5B8A00067610 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Budget.app/Budget";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BudgetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		0462432D197C5B8A00067610 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Budget.app/Budget";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BudgetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
 		};
@@ -463,15 +368,6 @@
 			buildConfigurations = (
 				04624329197C5B8A00067610 /* Debug */,
 				0462432A197C5B8A00067610 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0462432B197C5B8A00067610 /* Build configuration list for PBXNativeTarget "BudgetTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0462432C197C5B8A00067610 /* Debug */,
-				0462432D197C5B8A00067610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

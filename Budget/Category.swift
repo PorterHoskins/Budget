@@ -16,7 +16,7 @@ class Category: Equatable {
             if let name = _name {
                 return name
             } else {
-                return section.toRaw()
+                return section.rawValue
             }
         }
         set {

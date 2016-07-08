@@ -29,7 +29,7 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
             return
         }
         
-        let sortedTransactions = transactions.sorted({ t1, t2 in return t1.date.compare(t2.date) == NSComparisonResult.OrderedDescending })
+        let sortedTransactions = transactions.sort({ t1, t2 in return t1.date.compare(t2.date) == NSComparisonResult.OrderedDescending })
         var date: NSDate = sortedTransactions[0].date
         var transactionList = [Transaction]()
         for transaction in sortedTransactions {
@@ -48,13 +48,13 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return transactions.count + 1
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
@@ -62,7 +62,7 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         return transactions[section - 1].transactions.count
     }
     
-    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return nil
         }
@@ -74,8 +74,7 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         return 55
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var accountType: AccountType?
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)-> UITableViewCell {        var accountType: AccountType?
         var total = 0.0
         if let account = account {
             total = account.balance
@@ -87,7 +86,7 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("total", forIndexPath: indexPath) as UITableViewCell
-            let amountLabel = cell.viewWithTag(3) as UILabel
+            let amountLabel = cell.viewWithTag(3) as! UILabel
             
             amountLabel.text = numberFormatter.stringFromNumber(total)
             amountLabel.textColor = UIColor.color(total, forAccountType: accountType!)
@@ -97,9 +96,9 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("transaction", forIndexPath: indexPath) as UITableViewCell
-        let nameLabel = cell.viewWithTag(1) as UILabel
-        let typeLabel = cell.viewWithTag(2) as UILabel
-        let amountLabel = cell.viewWithTag(3) as UILabel
+        let nameLabel = cell.viewWithTag(1) as! UILabel
+        let typeLabel = cell.viewWithTag(2) as! UILabel
+        let amountLabel = cell.viewWithTag(3) as! UILabel
         
         let transaction = transactions[indexPath.section - 1].transactions[indexPath.row]
         

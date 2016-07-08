@@ -45,7 +45,7 @@ class Account: Equatable {
     }
     
     class func listOfDates(transactions: [Transaction]) -> [NSDate] {
-        var dates = Set<NSDate>()
+        let dates = Set<NSDate>()
         for transaction in transactions {
             dates.insert(transaction.date)
         }

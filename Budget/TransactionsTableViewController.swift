@@ -26,7 +26,7 @@ class TransactionsTableViewController: UITableViewController {
         tableView.dataSource = dataSource
         
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "reloadData", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl!.addTarget(self, action: #selector(TransactionsTableViewController.reloadData), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,7 +46,7 @@ class TransactionsTableViewController: UITableViewController {
     }
     
     func reloadData() {
-        self.refreshControl.endRefreshing()
+        self.refreshControl!.endRefreshing()
     }
 
     /*

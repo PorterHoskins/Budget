@@ -31,38 +31,38 @@ class AccountSelectionTableViewController: UITableViewController {
 
     // #pragma mark - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return accountController.accountTypes.count
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if let list = accountController.accounts[AccountType.fromRaw(section)!] {
+        if let list = accountController.accounts[AccountType(rawValue: section)!] {
             return list.count
         }
         
         return 0
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return accountController.accountTypes[section].nameForType
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("account", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
         let accountType = accountController.accountTypes[indexPath.section]
         if let accountList = accountController.accounts[accountType] {
-            var account: Account = accountList[indexPath.row]
-            cell.textLabel.text = account.name
+            let account: Account = accountList[indexPath.row]
+            cell.textLabel!.text = account.name
             
-            cell.accessoryType = (selectedAccount? == account ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None)
+            cell.accessoryType = (selectedAccount == account ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None)
             
-            if selectedAccount? == account {
+            if selectedAccount == account {
                 selectedCell = cell
             }
             
@@ -71,17 +71,17 @@ class AccountSelectionTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let accountType = accountController.accountTypes[indexPath.section]
         if let accountList = accountController.accounts[accountType] {
-            var account: Account = accountList[indexPath.row]
+            let account: Account = accountList[indexPath.row]
             
             if let viewController = self.delegate {
                 viewController.selectedAccount = account
                 viewController.reloadData()
                 
                 let cell = tableView.cellForRowAtIndexPath(indexPath)
-                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
                 
                 if let theSelectedCell = selectedCell {
                     theSelectedCell.accessoryType = UITableViewCellAccessoryType.None

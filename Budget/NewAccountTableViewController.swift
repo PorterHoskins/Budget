@@ -31,7 +31,7 @@ class NewAccountTableViewController: UITableViewController, UIPickerViewDataSour
             return;
         }
         
-        var balance = NSString(string: initialBalanceField?.text).doubleValue
+        var balance = NSString(string: (initialBalanceField?.text)!).doubleValue
         
         if initialBalanceField?.text == "" || (balance == 0.0 && initialBalanceField?.text != "0") {
             let alert = UIAlertView()
@@ -54,7 +54,7 @@ class NewAccountTableViewController: UITableViewController, UIPickerViewDataSour
         }
         
         if let pickerView = pickerView {
-            let accountType = AccountType.fromRaw(pickerView.selectedRowInComponent(0))!
+            let accountType = AccountType(rawValue: pickerView.selectedRowInComponent(0))!
             var newAccount = Account(name: nameField?.text, withInitialBalance: balance, withType: accountType)
             
             Common.accountController.addAccount(newAccount)
@@ -67,36 +67,36 @@ class NewAccountTableViewController: UITableViewController, UIPickerViewDataSour
         self.dismissViewControllerAnimated(true, completion:nil)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int  {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int  {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 6
     }
     
-    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-        return AccountType.fromRaw(row)!.nameForType
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return AccountType(rawValue: row)!.nameForType
     }
     
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let typeCell = typeCell {
-            typeCell.detailTextLabel.text = AccountType.fromRaw(row)?.nameForType
+            typeCell.detailTextLabel!.text = AccountType(rawValue: row)?.nameForType
         }
         
         resignFirstResponders()
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView!)  {
+    override func scrollViewDidScroll(scrollView: (UIScrollView!))  {
         resignFirstResponders()
     }
     
     func resignFirstResponders() {
-        if nameField?.isFirstResponder() {
+        if ((nameField?.isFirstResponder()) != nil) {
             nameField?.resignFirstResponder()
         }
         
-        if initialBalanceField?.isFirstResponder() {
+        if ((initialBalanceField?.isFirstResponder()) != nil) {
             initialBalanceField?.resignFirstResponder()
         }
     }

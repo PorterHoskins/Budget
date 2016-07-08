@@ -15,15 +15,15 @@ class CategoryController {
         let rawCategoryPath = NSBundle.mainBundle().pathForResource("Categories", ofType: "plist")
 //        assert(rawCategoryPath != nil, "Could not find the category file!")
         
-        var jsonError: NSError?
-        let plist = NSArray(contentsOfFile: rawCategoryPath)
+//        var jsonError: NSError?
+        let plist = NSArray(contentsOfFile: rawCategoryPath!)
         
-        for section in plist {
-            if let sectionName = CategorySection.fromRaw(section.objectForKey("name") as String!) {
+        for section in plist! {
+            if let sectionName = CategorySection(rawValue: section.objectForKey("name") as! String!) {
                 categories.append(Category(section: sectionName))
                 
-                for category in section.objectForKey("categories") as NSArray {
-                    categories.append(Category(section: sectionName, withName: category as String))
+                for category in section.objectForKey("categories") as! NSArray {
+                    categories.append(Category(section: sectionName, withName: category as! String))
                 }
             }
         }

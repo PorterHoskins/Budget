@@ -31,11 +31,11 @@ class NewTransactionTableViewController: UITableViewController {
     
     func reloadData() {
         if let selectedAccountCell = selectedAccountCell {
-            selectedAccountCell.detailTextLabel.text = selectedAccount?.name
+            selectedAccountCell.detailTextLabel!.text = selectedAccount?.name
         }
         
         if let selectedCategoryCell = selectedCategoryCell {
-            selectedCategoryCell.detailTextLabel.text = selectedCategory?.name
+            selectedCategoryCell.detailTextLabel!.text = selectedCategory?.name
         }
     }
 
@@ -50,7 +50,7 @@ class NewTransactionTableViewController: UITableViewController {
             return;
         }
         
-        var amount = NSString(string: amountField?.text).doubleValue
+        let amount = NSString(string: (amountField?.text!)!).doubleValue
         
         if amountField?.text == "" || (amount == 0.0 && amountField?.text != "0") {
             let alert = UIAlertView()
@@ -84,7 +84,7 @@ class NewTransactionTableViewController: UITableViewController {
                 transactionType = TransactionType.Expense
             }
             
-            let transaction = Transaction(amount: amount, withName: nameField!.text, withType: transactionType!)
+            let transaction = Transaction(amount: amount, withName: nameField!.text!, withType: transactionType!)
             Common.accountController.add(transaction, toAccount:selectedAccount)
 
             //TODO: Figure out why this will not work
@@ -107,7 +107,7 @@ class NewTransactionTableViewController: UITableViewController {
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if let viewController = segue.destinationViewController as? AccountSelectionTableViewController {
             viewController.selectedAccount = selectedAccount
             viewController.delegate = self

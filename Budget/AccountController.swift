@@ -24,7 +24,7 @@ class AccountController {
         }
         
         var transactions = [Transaction]()
-        for (type, accounts) in self.accounts {
+        for (_, accounts) in self.accounts {
             for account in accounts {
                 for transaction in account.transactions {
                     transactions.append(transaction)
@@ -33,8 +33,8 @@ class AccountController {
         }
         
         //Sort by date and name
-        transactions.sort { transaction1, transaction2 in return transaction1.date.compare(transaction2.date) == NSComparisonResult.OrderedDescending }
-        transactions.sort { t1, t2 in return t1.name.compare(t2.name) == NSComparisonResult.OrderedAscending}
+        transactions.sortInPlace { transaction1, transaction2 in return transaction1.date.compare(transaction2.date) == NSComparisonResult.OrderedDescending }
+        transactions.sortInPlace { t1, t2 in return t1.name.compare(t2.name) == NSComparisonResult.OrderedAscending}
         
         transactionCache = transactions
         
@@ -85,7 +85,7 @@ class AccountController {
     get {
         var balance = 0.0
         
-        for (type, list) in accounts {
+        for (_, list) in accounts {
             for account in list {
                 switch (account.type) {
                 case .Checking, .Savings, .Investment, .Retirement:
